@@ -1,18 +1,18 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeappsver	24.08.1
+%define		kdeappsver	24.08.2
 %define		kframever	5.94.0
 %define		qtver		5.15.2
 %define		kaname		kfind
 Summary:	kfind
 Name:		ka6-%{kaname}
-Version:	24.08.1
+Version:	24.08.2
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Applications
 Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	ef12be996a64dd03286812d82c217e58
+# Source0-md5:	a43995bf886b546d7f41ce88dcb32838
 URL:		http://www.kde.org/
 BuildRequires:	Qt6Concurrent-devel
 BuildRequires:	Qt6Core-devel >= %{qtver}
@@ -45,9 +45,10 @@ the "Tools" menu. It allows you to find files by name, type or
 content.
 
 %description -l pl.UTF-8
-KFind może używany jako samodzielny program, uruchamiany przez KRunnera
-lub z menu. Jest też zintegrowany z Konquerorem jak "Find File" w menu
-"Tools". Pozwala wyszukiwać pliki według nazwy, typu lub treści.
+KFind może używany jako samodzielny program, uruchamiany przez
+KRunnera lub z menu. Jest też zintegrowany z Konquerorem jak "Find
+File" w menu "Tools". Pozwala wyszukiwać pliki według nazwy, typu lub
+treści.
 
 %prep
 %setup -q -n %{kaname}-%{version}
@@ -104,5 +105,7 @@ rm -rf $RPM_BUILD_ROOT
 %lang(sv) %{_mandir}/sv/man1/kfind.1*
 %lang(tr) %{_mandir}/tr/man1/kfind.1*
 %lang(uk) %{_mandir}/uk/man1/kfind.1*
+%lang(sl) %{_mandir}/sl/man1/kfind.1*
+%{_mandir}/sr@latin/man1/kfind.1*
 %{_datadir}/metainfo/org.kde.kfind.appdata.xml
 %{_datadir}/qlogging-categories6/kfind.categories
